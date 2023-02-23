@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        #signin>form>input{
+        width: 300px;
+        display: block;
+        margin: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+      
+        }
+        h1 {
+         margin-top: 100px;
+        text-align: center;
+        font-family:sans-serif;
+        }
+        #signin>form input:nth-child(3){
+        background-color: black;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+        <div class="nav1">
+            <a href=""><i class="fa-brands fa-facebook"> <span>  1.8 M Followers</span></i></a>
+            <a href=""><i class="fa-brands fa-instagram"><span>  700k Followers</span></i></a>
+        </div>
+        <div class="nav2">
+            <p>Open doors to a world of fashion | Young and fresh</p>
+        </div>
+        <div>
+            <select class="nav3">
+                <option value="english">English</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="navbar">
+        <div>
+        <a href="">Men</a>
+        <a href="">Women</a>
+        <a href="">Artist collab</a>
+        </div>
+        <div>
+            <img src="./images header/1.jpg" alt="">
+        </div>
+        <div>
+        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="./register.html"><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+    <div id="signin">
+      <h1 id="heading">Log In</h1>
+      <form>
+        <input type="email" id="email" />
+        <input type="password" id="password" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+  let form=document.querySelector("form")
+  let email=document.getElementById("email")
+  let pass=document.getElementById("password")
+  let h1=document.getElementById("heading")
+  let data=JSON.parse(localStorage.getItem("User-data"))
+  // console.log(data)
+
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    // console.log(email.value,pass.value)
+    let print=false
+    for(let i=0;i<data.length;i++){
+      
+      if(email.value===data[i].email && pass.value===data[i].password){
+          print=true;
+          break;
+      }
+    }
+    if (print==true){
+      // h1.innerText="Sign in Successful"
+      location.replace("file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/homepage.html")
+    }
+    
+    else
+   alert("Please enter correct Details")
+
+  })
+  </script>
+</html>

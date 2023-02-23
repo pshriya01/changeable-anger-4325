@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        #ProductContainer{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 20px;
+            row-gap: 30px;
+        }
+        img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav1">
+            <a href=""><i class="fa-brands fa-facebook"> <span>  1.8 M Followers</span></i></a>
+            <a href=""><i class="fa-brands fa-instagram"><span>  700k Followers</span></i></a>
+        </div>
+        <div class="nav2">
+            <p>Open doors to a world of fashion | Young and fresh</p>   
+        </div>
+        <div>
+            <select class="nav3">
+                <option value="english">English</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="navbar">
+        <div>
+        <a href="">Men</a>
+        <a href="">Women</a>
+        <a href="">Artist collab</a>
+        </div>
+        <div>
+            <img src="./images header/1.jpg" alt="">
+        </div>
+        <div>
+        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="./register.html"><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+    <div id="ProductContainer">
+
+    </div>
+   
+</body>
+
+<script>
+ const Product=[
+        {
+            id: 1,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3336-200.jpg?v=1668068295",
+            // brand:"TSS Originals:Never Mind",
+            about:"Sports Tank Top",
+            price: 590,
+            
+        },
+        {
+            id: 2,
+            brand:"Shopspree",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3259-163.jpg?v=1668067639",
+            about:"Oversized t-shirt",
+            price: 990,
+        },
+        {
+            id: 3,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3409-232.jpg?v=1668068825&width=493",
+            about:"Women Oversized T-Shirt",
+            price: 890,
+        },
+        {
+            id: 4,
+            brand:"Shopspree",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3221-145.jpg?v=1677060848",
+            about:"Women Oversized Green T-Shirt",
+            price: 990,
+        },
+        {
+            id: 5,
+            brand:"Shopspree",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3354-208.jpg?v=1668068454",
+            about:"Oversized Tee",
+            price: 590,
+        },
+        {
+            id: 6,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3320-192.jpg?v=1668068156&width=493",
+            about:"Smiley Oversized T-Shirt",
+            price: 590,
+        },
+        {
+            id: 7,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3470-264.jpg?v=1668074225&width=493",
+            about:" Oversized Cropped T-Shirt",
+            price: 590,
+        },
+        {
+            id: 8,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3303-183.jpg?v=1668068023&width=493",
+            about:"Women Oversized Cropped T-Shirt",
+            price: 990,
+        },
+        {
+            id: 9,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/cherrygraphiccrew-white3_800x-jpg-2.webp?v=1668165560&width=493",
+            about:"Women Oversized T-Shirt",
+            price: 690,
+        },
+        {
+            id: 10,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/contraststitchdetailoversizedcrew-blue4_800x-jpg-2.webp?v=1668165536&width=493",
+            about:"Women Oversized Cropped T-Shirt",
+            price: 1190,
+        },
+        {
+            id: 11,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/cherrygraphiccrew-white3_800x-jpg-2.webp?v=1668165560&width=493",
+            brand:"Solids: White(Cut Out)",
+            about:"Women Oversized Cropped T-Shirt",
+            price: 1190,
+        },
+        {
+            id: 12,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/cherrygraphiccrew-green5_800x-jpg-2.webp?v=1668165565&width=493",
+            about:"Women Oversized Cropped T-Shirt",
+            price: 1190,
+        },
+        {
+            id: 13,
+            brand:"STHE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/1_9a0e3143-8494-44f7-9d66-ddd082fe2b46.jpg?v=1677067142&width=493",
+            // brand:"TSS Originals:Never Mind",
+            about:"Sports Tank Top",
+            price: 590,
+            
+        },
+        {
+            id: 14,
+            brand:"Shopspree",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3496-273.jpg?v=1668074409&width=493",
+            about:"Oversized t-shirt",
+            price: 990,
+        },
+        {
+            id: 15,
+            brand:"THE COUTURE CLUB",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-0747-8.jpg?v=1668075236&width=493",
+            about:"Women Oversized T-Shirt",
+            price: 890,
+        },
+        {
+            id: 16,
+            brand:"Shopspree",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3447-254.jpg?v=1668074003&width=493",
+            about:"Women Oversized Green T-Shirt",
+            price: 990,
+        },
+    ];
+
+let LSData=Product;
+let Container=document.getElementById("ProductContainer");
+let CART= JSON.parse(localStorage.getItem("Cart")) ||[];
+function DisplayData(){
+    Container.innerHTML="";
+    LSData.forEach((element) => {
+        
+        let Card = document.createElement("div");
+        let Image1 = document.createElement("img");
+        let Brand = document.createElement("p");
+        // let Category = document.createElement("h4");
+        let Price = document.createElement("h3");
+        let About = document.createElement("h4");
+        let AddtoCart = document.createElement("button");
+        
+        // Image1.setAttribute("src", element.image);
+        Image1.src=element.Img
+        Brand.innerText=element.brand;
+        About.innerText=element.about;
+        Price.innerText=element.price;
+        AddtoCart.innerText="Buy It Now"
+        // console.log(typeof(LSData[i].price));
+        AddtoCart.addEventListener("click", ()=>{
+            if(checkdup(element)){
+                alert("Product already in cart")
+            }else{
+            CART.push({...element,Quantity:1})
+            console.log(CART)
+            localStorage.setItem("Cart",JSON.stringify(CART))
+            alert("Product added to cart")
+            }     
+        })
+        
+        Card.append(Image1,Brand,About,Price, AddtoCart)
+        Container.append(Card)
+    } )  
+}
+function checkdup(Product){
+    for (let i=0;i<CART.length;i++){
+        if(CART[i].id===Product.id)
+        return true
+    }
+    return false
+}
+DisplayData()
+
+
+</script>
+</html>
