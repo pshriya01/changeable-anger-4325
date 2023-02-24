@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
-        /* #ProductContainer{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            column-gap: 20px;
-            row-gap: 30px;
+        .heading {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 30px;
+            font-family: sans-serif;
         }
-        img{
-            width: 100%;
-        } */
-
     </style>
 </head>
 <body>
@@ -30,7 +26,7 @@
             <a href=""><i class="fa-brands fa-instagram"><span>  700k Followers</span></i></a>
         </div>
         <div class="nav2">
-            <p>Open doors to a world of fashion | Young and fresh</p>   
+            <p>Open doors to a world of fashion | Young and fresh</p>
         </div>
         <div>
             <select class="nav3">
@@ -56,8 +52,84 @@
         <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
-    <!-- <div id="ProductContainer">
+    <p class="heading">Shopping Cart</p>
+    <div id="Container">
 
-    </div> -->
-   
-</body>
+    </div>
+    </body>
+    <script>
+    let LSData=JSON.parse(localStorage.getItem("Cart"))||[]
+    let Container=document.getElementById("Container")
+    console.log(LSData)
+    function DisplayData(){
+    Container.innerHTML="";
+    LSData.forEach((element) => {
+        
+        let Card = document.createElement("div");
+        let Image1 = document.createElement("img");
+        let Brand = document.createElement("p");
+        let Price = document.createElement("h3");
+        let About = document.createElement("h4");
+        let AddtoCart = document.createElement("button");
+        let increase=document.createElement("button")
+        let decrease=document.createElement("button")
+        let quantity=document.createElement("span")
+
+
+
+        increase.textContent="+";
+        decrease.textContent="-";
+        quantity.textContent=element.Quantity
+        Image1.src=element.Img
+        Brand.innerText=element.brand;
+        About.innerText=element.about;
+        Price.innerText=element.price;
+        AddtoCart.innerText="Remove from cart"
+
+
+        AddtoCart.addEventListener("click", ()=>{
+          LSData= LSData.filter((ele)=>{
+            if(ele.id!==element.id)
+            return true
+            })
+            localStorage.setItem("Cart",JSON.stringify(LSData))
+            DisplayData()
+            console.log(LSData)
+        })
+
+
+        increase.addEventListener("click", () => {
+        element=element.quantity++
+    
+        localStorage.setItem("Cart",JSON.stringify(Cart))
+          DisplayData()
+      
+        });
+        
+
+         decrease.addEventListener("click", () => {
+          if(product.quantity>1){
+            element=element.quantity--
+            localStorage.setItem("cart",JSON.stringify(Cart))
+          DisplayData()
+          }
+      
+        });
+           
+        
+        Card.append(Image1,Brand,About,Price,increase,quantity,decrease, AddtoCart)
+        Container.append(Card)
+    } )  
+}
+
+
+
+
+DisplayData()
+
+
+</script>
+</html>
+
+    </script>
+    </html>
