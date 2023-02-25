@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+
+        #flex {
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 10px;
+        }
+        .data div {
+            margin-top: 20px;
+        }
+        .data img {
+            height: 40px;
+            width: 40px;
+            margin-left: 10px;
+        }
+        #flex>div:nth-child(1)>img{
+            height: 500px;
+            width: 100%;
+
+        }
+        .data{
+            padding-top: -10px;
+            margin-top: -10px;
+        }
+        #wish{
+            width: 400px;
+            text-align: center;
+            background-color: white;
+            color: black;
+            height: 30px;
+            border-radius: 5px;
+        }
+        #buy {
+            width: 400px;
+            text-align: center;
+            background-color:black;
+            color: white;
+            height: 30px;
+            border-radius: 5px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav1">
+            <a href=""><i class="fa-brands fa-facebook"> <span>  1.8 M Followers</span></i></a>
+            <a href=""><i class="fa-brands fa-instagram"><span>  700k Followers</span></i></a>
+        </div>
+        <div class="nav2">
+            <p>Open doors to a world of fashion | Young and fresh</p>
+        </div>
+        <div>
+            <select class="nav3">
+                <option value="english">English</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="navbar">
+        <div>
+        <a href="">Men</a>
+        <a href="">Women</a>
+        <a href="">Artist collab</a>
+        </div>
+        <div>
+            <img src="./images header/1.jpg" alt="">
+        </div>
+        <div>
+        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="./register.html"><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+    <div id="flex">
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3409-232.jpg?v=1668068825&width=493" alt="">
+        </div>
+        <div class="data">
+            <h1>Women Oversized T-shirt</h1>
+            <br>
+            <p>Rs. 590.00<br>Tax Included</p>
+            <br>
+            <br>
+
+            <button id="wish">Add to Wishlist</button>
+            <br>
+            <br>
+            <button id="buy">Buy It Now</button>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-33961-226.jpg?v=1677061471&width=493" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3405-231.jpg?v=1677061484&width=493" alt="">
+            </div>
+            <p>Product Description</p>
+            <ul type="disc">
+                <li>Oversized Sweatshirt</li>
+                <li>Round Neck</li>
+                <li>Rib Finish at the Hemlines</li>
+                <li>Model wears size S and is 5'5</li>
+            </ul>
+           
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+    let add=[]
+    let wish=document.getElementById("wish")
+    let buy=document.getElementById("buy")
+    wish.addEventListener("click",()=>{
+        add.push
+
+    })
+</script>
+</html>

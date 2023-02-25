@@ -18,7 +18,11 @@
             row-gap: 30px;
         }
         img{
+          
             width: 100%;
+        }
+        #cart {
+            margin-right: 30px;
         }
 
     </style>
@@ -53,7 +57,8 @@
         <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="./register.html"><i class="fa-regular fa-user"></i></a>
         <a href=""><i class="fa-regular fa-heart"></i></a>
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/individual.html"></a>
         </div>
     </div>
     <div id="ProductContainer">
@@ -67,9 +72,9 @@
         {
             id: 1,
             brand:"THE COUTURE CLUB",
-            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3336-200.jpg?v=1668068295",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3409-232.jpg?v=1668068825&width=493",
             // brand:"TSS Originals:Never Mind",
-            about:"Sports Tank Top",
+            about:"Women Oversized T-shirt",
             price: 590,
             
         },
@@ -77,13 +82,13 @@
             id: 2,
             brand:"Shopspree",
             Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3259-163.jpg?v=1668067639",
-            about:"Oversized t-shirt",
+            about:"Sports Tank Top",
             price: 990,
         },
         {
             id: 3,
             brand:"THE COUTURE CLUB",
-            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3409-232.jpg?v=1668068825&width=493",
+            Img:"https://cdn.shopify.com/s/files/1/0677/1464/6315/products/KOOVS_20OCT22-3336-200.jpg?v=1668068295",
             about:"Women Oversized T-Shirt",
             price: 890,
         },
@@ -186,6 +191,7 @@
 let LSData=Product;
 let Container=document.getElementById("ProductContainer");
 let CART= JSON.parse(localStorage.getItem("Cart")) ||[];
+let WISH=JSON.parse(localStorage.getItem("wishlist"))||[];
 function DisplayData(){
     Container.innerHTML="";
     LSData.forEach((element) => {
@@ -197,14 +203,21 @@ function DisplayData(){
         let Price = document.createElement("h3");
         let About = document.createElement("h4");
         let AddtoCart = document.createElement("button");
-        
+        let AddtoWish=document.createElement("button")
+        // let redirect=document.createElement("a")
         // Image1.setAttribute("src", element.image);
+        // redirect.href="file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/individual.html"
+        // redirect.textContent=element.Img
         Image1.src=element.Img
         Brand.innerText=element.brand;
         About.innerText=element.about;
         Price.innerText=element.price;
         AddtoCart.innerText="Buy It Now"
-        // console.log(typeof(LSData[i].price));
+        AddtoWish.textContent="Add to Wishlist"
+        AddtoCart.setAttribute("id","cart")
+       Image1.addEventListener("click",()=>{
+           location.replace("file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/individual.html")
+       })
         AddtoCart.addEventListener("click", ()=>{
             if(checkdup(element)){
                 alert("Product already in cart")
@@ -215,8 +228,15 @@ function DisplayData(){
             alert("Product added to cart")
             }     
         })
+        AddtoWish.addEventListener("click",()=>{
+            WISH.push((element))
+            console.log(WISH)
+            localStorage.setItem("wishlist",JSON.stringify(WISH))
+            alert("product added to Wishlist")
+
+        })
         
-        Card.append(Image1,Brand,About,Price, AddtoCart)
+        Card.append(Image1,Brand,About,Price, AddtoCart,AddtoWish)
         Container.append(Card)
     } )  
 }
