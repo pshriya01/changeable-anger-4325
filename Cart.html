@@ -17,6 +17,21 @@
             font-size: 30px;
             font-family: sans-serif;
         }
+        /* #divider {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        } */
+        #Container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:20px;
+            
+            
+        }
+        img {
+            width: 100%;
+        }
+         
     </style>
 </head>
 <body>
@@ -53,13 +68,16 @@
         </div>
     </div>
     <p class="heading">Shopping Cart</p>
-    <div id="Container">
-
-    </div>
+    
+        <div id="Container"></div>
+        
+   
     </body>
     <script>
     let LSData=JSON.parse(localStorage.getItem("Cart"))||[]
+    console.log(LSData)
     let Container=document.getElementById("Container")
+    let total= document.getElementById("cart-total")
     console.log(LSData)
     function DisplayData(){
     Container.innerHTML="";
@@ -99,24 +117,36 @@
 
 
         increase.addEventListener("click", () => {
-        element=element.quantity++
+        element=element.Quantity++
     
-        localStorage.setItem("Cart",JSON.stringify(Cart))
+        localStorage.setItem("Cart",JSON.stringify(LSData))
           DisplayData()
       
         });
         
 
          decrease.addEventListener("click", () => {
-          if(product.quantity>1){
-            element=element.quantity--
-            localStorage.setItem("cart",JSON.stringify(Cart))
+          if(element.Quantity>1){
+            element=element.Quantity--
+            localStorage.setItem("Cart",JSON.stringify(LSData))
           DisplayData()
           }
       
         });
-           
-        
+
+    // let sum=0;
+
+    // for(let i=0;i<LSData.length;i++){
+    //     sum+=LSData[i].price*LSData[i].quantity;
+    //     console.log()
+    // }
+
+    // total.textContent=sum;
+
+
+
+
+
         Card.append(Image1,Brand,About,Price,increase,quantity,decrease, AddtoCart)
         Container.append(Card)
     } )  
