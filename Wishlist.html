@@ -10,6 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+         #ProductContainer{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 20px;
+            row-gap: 30px;
+        }
+        img{
+          
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="nav">
@@ -30,18 +42,18 @@
     </div>
     <div class="navbar">
         <div>
-        <a href="">Men</a>
-        <a href="">Women</a>
-        <a href="">Artist collab</a>
+        <a href="./index.html">Men</a>
+        <a href="./index.html">Women</a>
+        <a href="./index.html">Artist collab</a>
         </div>
         <div>
-            <img src="./images header/1.jpg" alt="">
+            <img src="./images header/newlogoagain.png" alt="">
         </div>
-        <div>
-        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <div id="media">
+        <!-- <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a> -->
         <a href="./register.html"><i class="fa-regular fa-user"></i></a>
-        <a href=""><i class="fa-regular fa-heart"></i></a>
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="./Wishlist.html"><i class="fa-regular fa-heart"></i></a>
+        <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
    <div id="ProductContainer"></div> 
@@ -49,44 +61,40 @@
 </body>
 <script>
 let Container=document.getElementById("ProductContainer");
-let Wishlist= JSON.parse(localStorage.getItem("wishlist")) ||[];
+let Wishlist= JSON.parse(localStorage.getItem("wishlist"))||[] ;
 function DisplayData(){
     Container.innerHTML="";
-    LSData.forEach((element) => {
+    Wishlist.forEach((element) => {
         
         let Card = document.createElement("div");
         let Image1 = document.createElement("img");
         let Brand = document.createElement("p");
-        // let Category = document.createElement("h4");
+        
         let Price = document.createElement("h3");
         let About = document.createElement("h4");
-        let AddtoCart = document.createElement("button");
-        // let redirect=document.createElement("a")
-        // Image1.setAttribute("src", element.image);
-        // redirect.href="file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/individual.html"
-        // redirect.textContent=element.Img
+        let Delete = document.createElement("button");
+        
         Image1.src=element.Img
         Brand.innerText=element.brand;
         About.innerText=element.about;
         Price.innerText=element.price;
-        AddtoCart.innerText="Buy It Now"
-       Image1.addEventListener("click",()=>{
-           location.replace("file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/individual.html")
-       })
-        AddtoCart.addEventListener("click", ()=>{
-            if(checkdup(element)){
-                alert("Product already in cart")
-            }else{
-            CART.push({...element,Quantity:1})
-            console.log(CART)
-            localStorage.setItem("Cart",JSON.stringify(CART))
-            alert("Product added to cart")
-            }     
-        })
+        Delete.innerText="Delete"
+  
+    Delete.textContent = "Delete"
+ 
+ Delete.addEventListener("click", () => {
+     console.log(element,"Price")
+     Wishlist=Wishlist.filter((ele)=>{
+     return ele.id!==element.id
+   })
+   localStorage.setItem("wishlist",JSON.stringify(Wishlist))
+   DisplayData()
+   });
         
-        Card.append(Image1,Brand,About,Price, AddtoCart)
+        Card.append(Image1,Brand,About,Price, Delete)
         Container.append(Card)
     } )  
 }
+DisplayData();
 </script>
 </html>

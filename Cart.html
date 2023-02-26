@@ -17,19 +17,57 @@
             font-size: 30px;
             font-family: sans-serif;
         }
-        /* #divider {
+        #divider {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
-        } */
+            grid-template-columns: 3fr 1fr
+        }
         #Container{
             display: grid;
             grid-template-columns: repeat(4,1fr);
             gap:20px;
+            width: 95%;
+            margin: auto;
+            margin-bottom: 20px;
             
             
         }
+      
         img {
             width: 100%;
+        }
+       
+        #payment {
+            /* border: 2px solid red; */
+            padding-left: 10px;
+            padding-right: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+        #payment button{
+            display: block;
+            margin: auto;
+            width: 300px;
+            height: 28px;
+            margin-top:10px;
+            background-color: black;
+            color: white;
+            margin-bottom: 20px;
+           
+        }
+        #btn{
+            background-color: white;
+            color: black;
+            border: solid 0.2px black;
+        }
+        #inc {
+            background-color: white;
+            color: black;
+            border: solid 0.2px black;
+
         }
          
     </style>
@@ -52,32 +90,68 @@
 
     </div>
     <div class="navbar">
-        <div>
-        <a href="">Men</a>
-        <a href="">Women</a>
-        <a href="">Artist collab</a>
+        <div id="media">
+        <a href="./index.html">Men</a>
+        <a href="./index.html">Women</a>
+        <a href="./index.html">Artist collab</a>
         </div>
         <div>
-            <img src="./images header/1.jpg" alt="">
+            <img src="./images header/newlogoagain.png" alt="">
         </div>
         <div>
         <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="./register.html"><i class="fa-regular fa-user"></i></a>
-        <a href=""><i class="fa-regular fa-heart"></i></a>
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="./Wishlist.html"><i class="fa-regular fa-heart"></i></a>
+        <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
     <p class="heading">Shopping Cart</p>
     
-        <div id="Container"></div>
+        <div id="divider">
+            <div id="Container"></div>
+            <div >
+                <div id="payment">
+                    <br>
+                    <p>Billing Details :</p>
+                <hr>
+                <div class="row">
+                    <p>Cart Total</p>
+                    <p><span id="cart-total">0</span></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p>Shipping Charges</p>
+                    <p>Free</p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p>Total Amount</p>
+                    <p><span id="cart-total1">0</span></p>
+                </div>
+                <!-- <hr> -->
+                <button id="btn">Place Order</button>
+                <br>
+                </div>
+                
+            </div>
+           
+        </div>
         
    
     </body>
     <script>
     let LSData=JSON.parse(localStorage.getItem("Cart"))||[]
-    console.log(LSData)
+    // console.log(LSData)
+    let pay=document.getElementById("btn")
     let Container=document.getElementById("Container")
     let total= document.getElementById("cart-total")
+    let totalcart=document.getElementById("cart-total1")
+    pay.addEventListener("click",()=>{
+            location.replace("file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/paymentcheckout.html")
+
+        })
+
+
     console.log(LSData)
     function DisplayData(){
     Container.innerHTML="";
@@ -103,14 +177,18 @@
         About.innerText=element.about;
         Price.innerText=element.price;
         AddtoCart.innerText="Remove from cart"
-
+        AddtoCart.setAttribute("id","btn")
+        increase.setAttribute=("id","inc")
 
         AddtoCart.addEventListener("click", ()=>{
           LSData= LSData.filter((ele)=>{
             if(ele.id!==element.id)
             return true
             })
+            total.textContent=+(sum);
+            totalcart.textContent=+(sum)
             localStorage.setItem("Cart",JSON.stringify(LSData))
+           
             DisplayData()
             console.log(LSData)
         })
@@ -133,15 +211,16 @@
           }
       
         });
+       
+    let sum=0;
 
-    // let sum=0;
+    for(let i=0;i<LSData.length;i++){
+        sum+=(LSData[i].price)*(LSData[i].Quantity);
+        console.log()
+    }
 
-    // for(let i=0;i<LSData.length;i++){
-    //     sum+=LSData[i].price*LSData[i].quantity;
-    //     console.log()
-    // }
-
-    // total.textContent=sum;
+    total.textContent=+(sum);
+    totalcart.textContent=+(sum)
 
 
 

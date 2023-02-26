@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav1">
+            <a href=""><i class="fa-brands fa-facebook"> <span>  1.8 M Followers</span></i></a>
+            <a href=""><i class="fa-brands fa-instagram"><span>  700k Followers</span></i></a>
+        </div>
+        <div class="nav2">
+            <p>Open doors to a world of fashion | Young and fresh</p>
+        </div>
+        <div>
+            <select class="nav3">
+                <option value="english">English</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="navbar">
+        <div>
+        <a href="">Men</a>
+        <a href="">Women</a>
+        <a href="">Artist collab</a>
+        </div>
+        <div>
+            <img src="./images header/1.jpg" alt="">
+        </div>
+        <div>
+        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="./register.html"><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a>
+        <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+    <h3>Payment Method</h3>
+    <h1></h1>
+   <div id="Credit">
+    <h3>Enter Card Details</h3>
+    <input type="number" placeholder="Card Number" name="" id="num">
+    <input type="text" placeholder="Card Holder Name" id="name">
+    <input type="number" placeholder="CVV" id="cvv">
+    <input type="number" placeholder="OTP" id="OTP" >
+    <!-- <button id="CreateOtp">Create Otp</button> -->
+    <button id="SubmitOtp">Submit Otp</button>
+
+</div>
+</body>
+<script>
+    let Thanks=document.querySelector("h1")
+    let number=document.getElementById("num");
+    let name=document.getElementById("name");
+    let Cvv=document.getElementById("cvv");
+    // let Create=document.getElementById("CreateOtp");
+    let Submit =document.getElementById("SubmitOtp");
+    let Otp1 =document.getElementById("OTP");
+    let otp = 9911;
+   
+    Submit.addEventListener("click",()=>{
+        if(otp== Number(Otp1.value)){
+            alert("Payment Successful")
+        Thanks.innerText= "Your Order is Placed"
+        }else{
+            alert("Wrong Otp")
+        }
+        
+    })
+        
+    
+</script>
+</html>
