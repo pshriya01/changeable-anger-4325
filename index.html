@@ -10,6 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        @media only screen and (max-width:900px){
+            #sliderwomen{
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 10px;
+            }
+            #slidermen{
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 10px;
+            }
+            #sliderjacket{
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 10px;
+            }
+
+        }
+    </style>
 </head>
     
 <body>
@@ -30,23 +47,23 @@
 
     </div>
     <div class="navbar">
-        <div>
+        <div id="media">
         <a href="">Men</a>
         <a href="">Women</a>
         <a href="">Artist collab</a>
         </div>
         <div>
-            <img src="./images header/1.jpg" alt="">
+            <img src="./images header/newlogoagain.png" alt="">
         </div>
         <div>
-        <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <!-- <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a> -->
         <a href="./register.html"><i class="fa-regular fa-user"></i></a>
-        <a href=""><i class="fa-regular fa-heart"></i></a>
+        <a href="./Wishlist.html"><i class="fa-regular fa-heart"></i></a>
         <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
     <div class="banner">
-            <img src="./images header/banner 2.webp" alt="">
+            <img src="./images header/ban.png" alt="">
     </div>
     <br>
     <div class="women">
@@ -54,16 +71,16 @@
     </div>
    <div id="sliderwomen">
       <div class="zoom">
-        <img src="./women/Tee-01.webp" alt="">
+        <img id="product" src="./women/Tee-01.webp" alt="">
       </div>
       <div class="zoom">
-        <img src="./women/tops-01_copy.webp" alt="">
+        <img class="product" src="./women/tops-01_copy.webp" alt="">
       </div>
      <div class="zoom">
-        <img src="./women/shorts_women-01.webp" alt="">
+        <img class="product" src="./women/shorts_women-01.webp" alt="">
      </div>
      <div class="zoom">
-        <img src="./women/sweats_women-01.webp" alt="">
+        <img class="product" src="./women/sweats_women-01.webp" alt="">
      </div>
    </div>
    <br>
@@ -112,37 +129,6 @@
       <h4>Distorted Smile Varsity Jackets</h4>
    </div>
  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -209,4 +195,12 @@
    
    
 </body>
+<script>
+ let product=document.getElementById("product")
+ product.addEventListener("click",()=>{
+
+    location.replace("file:///C:/Users/Admin/Desktop/CW-project%20unit-2/changeable-anger-4325/product.html")
+   
+ })
+</script>
 </html>
