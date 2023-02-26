@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopspree</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        #Credit>input{
+            display: block;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        h3 {
+            margin-left: 10px;
+        }
+        button {
+            margin-left: 10px;
+            margin-top: 10px;
+            width:175px;
+            background-color: black;
+            color: white;
+        }
+       #thank {
+            color: teal;
+            font-family:'Times New Roman', Times, serif
+        }
+    </style>
 </head>
 <body>
     <div class="nav">
@@ -29,13 +50,13 @@
 
     </div>
     <div class="navbar">
-        <div>
-        <a href="">Men</a>
-        <a href="">Women</a>
-        <a href="">Artist collab</a>
+        <div id="media">
+        <a href="./index.html">Men</a>
+        <a href="./index.html">Women</a>
+        <a href="./index.html">Artist collab</a>
         </div>
         <div>
-            <img src="./images header/1.jpg" alt="">
+            <img src="./images header/newlogoagain.png" alt="">
         </div>
         <div>
         <a href="https://cdnjs.com/libraries/font-awesome"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -45,34 +66,41 @@
         </div>
     </div>
     <h3>Payment Method</h3>
-    <h1></h1>
-   <div id="Credit">
-    <h3>Enter Card Details</h3>
-    <input type="number" placeholder="Card Number" name="" id="num">
-    <input type="text" placeholder="Card Holder Name" id="name">
-    <input type="number" placeholder="CVV" id="cvv">
-    <input type="number" placeholder="OTP" id="OTP" >
-    <!-- <button id="CreateOtp">Create Otp</button> -->
+    <h1 id="thank"></h1>
+ <div id="Credit">
+    <input type="number" placeholder="Enter Card Number" name="" id="number">
+    <input type="text" placeholder="Name of Card Holder" id="name">
+    <input type="password" placeholder="CVV" id="cvv">
+    <button id="generate">Generate OTP</button>
+    <input type="number" placeholder="OTP" id="otp" >
     <button id="SubmitOtp">Submit Otp</button>
-
 </div>
 </body>
 <script>
-    let Thanks=document.querySelector("h1")
-    let number=document.getElementById("num");
+    let h1=document.querySelector("h1")
+    let number=document.getElementById("number");
     let name=document.getElementById("name");
     let Cvv=document.getElementById("cvv");
-    // let Create=document.getElementById("CreateOtp");
     let Submit =document.getElementById("SubmitOtp");
-    let Otp1 =document.getElementById("OTP");
-    let otp = 9911;
-   
+    let Otp1 =document.getElementById("otp");
+    let generate=document.getElementById("generate")
+    let otp=0;
+   generate.addEventListener("click",()=>{
+      otp=Math.floor(Math.random()*10000)
+      console.log(otp)
+   })
     Submit.addEventListener("click",()=>{
         if(otp== Number(Otp1.value)){
             alert("Payment Successful")
-        Thanks.innerText= "Your Order is Placed"
+            h1.innerText="ThankYou for Shopping..!!!"
+            setTimeout(function(){
+            
+           location.replace("./index.html")
+
+            },2500)
+        
         }else{
-            alert("Wrong Otp")
+            alert("Invalid OTP")
         }
         
     })
